@@ -24,6 +24,7 @@ function App() {
 
   return (
     <>
+    {/* three editor on the top */}
       <div className="pane top-pane">
         <Editor
           language="xml"
@@ -44,12 +45,14 @@ function App() {
           onChange={setJs}
         />
       </div>
+
+      {/* live preview area of the code on the bottom */}
       <div className="pane">
         <iframe
-          srcDoc={srcDoc}
+          srcDoc={srcDoc} //srcDoc contain the tontent that iframe should display
           title="output"
           sandbox="allow-scripts"
-          frameBorder="0"
+          frameBorder="1"
           width="100%"
           height="100%"
         />

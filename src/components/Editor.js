@@ -9,12 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function Editor(props) {
+
   const {
     language,
     displayName,
     value,
     onChange
   } = props
+  
   const [open, setOpen] = useState(true)
 
   function handleChange(editor, data, value) {
@@ -22,7 +24,10 @@ export default function Editor(props) {
   }
 
   return (
+    // editor wrapper
     <div className={`editor-container ${open ? '' : 'collapsed'}`}>
+
+      {/* editor title */}
       <div className="editor-title">
         {displayName}
         <button
@@ -33,6 +38,8 @@ export default function Editor(props) {
           <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
         </button>
       </div>
+
+      {/* editor main body to input live code */}
       <ControlledEditor
         onBeforeChange={handleChange}
         value={value}
@@ -45,6 +52,7 @@ export default function Editor(props) {
           lineNumbers: true
         }}
       />
+
     </div>
   )
 }
