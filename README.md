@@ -1,7 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-codePen
+Code Pen
 write down the code to show immediately in the website
+coding as writting
 
 ### `npm start`
 
