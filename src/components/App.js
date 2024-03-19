@@ -3,9 +3,14 @@ import Editor from './Editor'
 import useLocalStorage from '../hooks/useLocalStorage'
 
 function App() {
-  const [html, setHtml] = useLocalStorage('html', '<p>hello world</p>')
-  const [css, setCss] = useLocalStorage('css', 'p {color:red}')
-  const [js, setJs] = useLocalStorage('js', "document.body.style.background='blue'")
+  const preset = {
+    HTML:"<p class='up'>coding UP</p>\n<p class='down'>showing DOWN</p>\n<p>you can edit the code top of the page</p>\n<p>and it will show immediately down below</p>",
+    CSS:"p {\n  color:red\n}\n\n.up {\n  color:yellow; \n  font-size: 50px;\n}\n\n.down {\n  font-size: 50px;\n}",
+    JS:"document.body.style.background='blue'",
+  }
+  const [html, setHtml] = useLocalStorage('html', preset.HTML)
+  const [css, setCss] = useLocalStorage('css', preset.CSS)
+  const [js, setJs] = useLocalStorage('js', preset.JS)
   const [srcDoc, setSrcDoc] = useState('')
 
   useEffect(() => {
